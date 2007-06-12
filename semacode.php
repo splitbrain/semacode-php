@@ -26,7 +26,7 @@
  * @license This code is licensed under the GNU GPL Version 2.0
  */
 
-error_reporting(E_ALL);
+//error_reporting(E_ALL); // recommended for testing
 
 class ReedSolomon {
     // galois field polynomial
@@ -1131,7 +1131,7 @@ class Semacode {
         return $new;
     }
 
-    function asPNG($text,$width=160){
+    function sendPNG($text,$width=160){
         $img  = $this->asGDImage($text,$width);
         header('Content-Type: image/png');
         imagepng($img);
@@ -1139,12 +1139,4 @@ class Semacode {
     }
 }
 
-
-$sema = new Semacode();
-#$table = $sema->asHTMLTable("hellobervater");
-#echo '<center>';
-#echo $table;
-#echo '</center>';
-
-echo $sema->asPNG("hellobervater",300);
 ?>
