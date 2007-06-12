@@ -1103,15 +1103,15 @@ class Semacode {
         $bs = 10;
         $size  = $bs * $w;
 
-        $img   = imagecreatetruecolor($size,$size);
+        $img   = imagecreatetruecolor($size + 2 * $bs * 2 ,$size + 2 * $bs * 2);
         $white = imagecolorallocate($img,255,255,255);
         $black = imagecolorallocate($img,0,0,0);
-
+        imagefill($img,0,0,$white);
 
         for($j=0; $j < $h; $j++){
             for($i=0; $i < $w; $i++){
-                $x1 = $i * $bs;
-                $y1 = $size - (($j + 1) * $bs);
+                $x1 = ($i * $bs) + $bs * 2;
+                $y1 = ($size - (($j + 1) * $bs)) + $bs * 2;
                 $x2 = $x1 + $bs;
                 $y2 = $y1 + $bs;
 
@@ -1128,7 +1128,7 @@ class Semacode {
         }
 
         $new  = imagecreatetruecolor($resize,$resize);
-        imagecopyresized($new, $img, 0, 0, 0, 0, $resize, $resize, $size, $size);
+        imagecopyresized($new, $img, 0, 0, 0, 0, $resize, $resize, $size + 2 * $bs * 2, $size + 2 * $bs * 2);
         imagedestroy($img);
         return $new;
     }
