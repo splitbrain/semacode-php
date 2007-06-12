@@ -409,9 +409,7 @@ class Semacode {
                 $enc = 'a';
             //$this->debug("encoding: " + e.encoding);
             //$this->debug("encoding[sp]: " + e.encoding[sp]);
-
-# FIXME we ignore the encoding array and always encode ASCII
-#            $newenc = strtolower($e['encoding'][$sp]);
+            $newenc = strtolower($e['encoding'][$sp]);
             switch ($newenc) {
                 // encode character
                 case 'c':
