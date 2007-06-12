@@ -17,7 +17,7 @@ $size = (int) $_REQUEST['size'];
 if(!$size) $size = 160;
 
 // strip non-supported chars (is this correct?)
-$text = preg_replace('/[^\w!\"#$%&\'()*+,\-\.\/:;<=>?@[\\_\]\[{\|}~\r*]+/','', $text);
+$text = preg_replace('/[^\w!\"#$%&\'()*+,\-\.\/:;<=>?@[\\_\]\[{\|}~\r*]+ /','', $text);
 
 // encode
 $semacode = new Semacode();
