@@ -19,7 +19,7 @@
  * @link      http://sohne.net/projects/semafox/
  *
  * PHP port:
- * @copyright (C) 2007 Andreas Gohr
+ * @copyright (C) 2007,2014 Andreas Gohr
  * @author    Andreas Gohr <andi@splitbrain.org>
  * @link      http://www.splitbrain.org/
  *
@@ -420,7 +420,7 @@ class Semacode {
                     // X12
                     $out = array_fill(0, 6, 0);
                     $p = 0;
-                    $s2 = "!\"#$%&'()*+,-./:;<=>?@[\\]_";
+                    $s2 = "!\"#$%&'()*+,-./:;<=>?@[\\]^_\232";
                     $s3 = "";
                     if ($newenc == 'c') {
                         $en = " 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
